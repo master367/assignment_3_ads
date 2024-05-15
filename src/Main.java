@@ -26,6 +26,17 @@ public class Main {
         }
         testTable.printBucketSizes();
 
+        BST<Integer, String> bst = new BST<>();
+
+        bst.put(1,"didar");
+        bst.put(2,"merey");
+        bst.put(3,"damir");
+        bst.put(4,"ilyas");
+        System.out.println(bst.size());
+        System.out.println(bst.get(3));
+        bst.delete(2);
+        System.out.println(bst.get(2));
+
 
 
 
