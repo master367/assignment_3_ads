@@ -2,7 +2,7 @@ public class MyHashTable<K, V> {
     private class HashNode<K, V>{
         private K key;
         private V value;
-        private HashNode<K, V> next;
+        public HashNode<K, V> next;
 
         public HashNode(K key, V value) {
             this.key = key;
@@ -105,4 +105,18 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
+
+    public void printBucketSizes() {
+        for (int i = 0; i < capacity; i++) {
+            int count = 0;
+            HashNode<K, V> node = chainArray[i];
+            while (node != null) {
+                count++;
+                node = node.next;
+            }
+            System.out.println("Bucket " + i + ": " + count + " elements");
+        }
+
+    }
+
 }

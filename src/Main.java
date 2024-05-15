@@ -1,4 +1,5 @@
 import java.util.Hashtable;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,5 +16,19 @@ public class Main {
         System.out.println(hashTable.contains("merey"));
         System.out.println(hashTable.getKey("didar"));
 
-    }
+        MyHashTable<MyTestingClass, String> testTable = new MyHashTable<>();
+
+        Random rand = new Random();
+        for (int i = 0; i < 10000; i++) {
+            int id = rand.nextInt(10000);
+            MyTestingClass object = new MyTestingClass(id);
+            testTable.put(object, "Value " + i);
+        }
+        testTable.printBucketSizes();
+
+
+
+
+        }
+
 }
